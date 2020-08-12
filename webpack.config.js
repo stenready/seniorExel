@@ -35,9 +35,9 @@ module.exports={
   },
   devtool: isDev? 'source-map':false,
   devServer: {
-    // contentBase: 'src',
+    contentBase: path.resolve(__dirname, 'src'),
     port: 9000,
-    // watchContentBase: true,
+    watchContentBase: true,
     hot: isDev,
   },
   resolve: {
@@ -50,7 +50,7 @@ module.exports={
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: path.resolve(__dirname, 'src/index.html'),
       minify: {
         removeComments: isProd,
         collapseWhitespace: isProd,
