@@ -9,7 +9,9 @@
     "semi":"off",
     "max-len":"off",
     "require-jsdoc":"off",
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "quotes": "off",
+    "eol-last": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
