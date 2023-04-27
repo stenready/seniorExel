@@ -10,4 +10,5 @@ const excel = new Excel('#app', {
     Header, Toolbar, Formula, Table
   ]
 })
+console.log(excel, 'excel')
 excel.render()
