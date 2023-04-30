@@ -4,21 +4,28 @@ const CODES = {
 };
 
 function createRow(content, index = null) {
+	const resize = index ? '<div class="row-resize" data-resize="row" ></div>' : ''
 	return `
-   <div class="row">
-      <div class="row-info">${index ? index : ""}</div>
+   <div class="row" data-resizable="true">
+      <div class="row-info">
+				${index ? index : ""}
+				 ${resize}
+			</div>
       <div class="row-data">${content}</div>
    </div>
    `;
 }
-function toColumn(el) {
+function toColumn(el, index) {
 	return `
-      <div class="column">${el}</div>
+      <div class="column" data-resizable="true" data-index=${index}>
+				${el}
+			  <div class="col-resize" data-resize="col"></div>
+			</div>
    `;
 }
-function createCell() {
+function createCell(_, index) {
 	return `
-      <div class="ceil" contenteditable></div>
+      <div class="ceil" data-index=${index} contenteditable></div>
    `;
 }
 function toChar(_, index) {
