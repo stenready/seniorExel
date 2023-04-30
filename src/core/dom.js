@@ -14,6 +14,14 @@ class Dom {
     return this.$el.outerHTML.trim();
   }
 
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+
+  get dataset() {
+    return this.$el.dataset;
+  }
+
   closest(selector) {
     return $(this.$el.closest(selector))
   }
@@ -35,6 +43,17 @@ class Dom {
   clear() {
     this.html("");
     return this;
+  }
+
+  css(styles = {}) {
+    for (const stylesKey in styles) {
+      this.$el.style[stylesKey] = styles[stylesKey]
+    }
+    return this;
+  }
+
+  height() {
+    return this.$el.offsetHeight
   }
 
   append(node) {
